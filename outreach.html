@@ -1,358 +1,1025 @@
+<!-- i want the text in markdown -->
+
 <!doctype html>
 <html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Outreach — a focused, scholarly reading page for the Odyssey research archive.">
-<meta name="theme-color" content="#ffffff" id="theme-color">
-<meta name="color-scheme" content="light dark">
-<title>Outreach — Odyssey Research Archive</title>
-<style>
-:root{
-  --bg:#fff;--surface:#f7f8fa;--surface-2:#f1f3f5;--text:#202124;--muted:#667085;
-  --faint:#8b95a1;--line:#dfe3e8;--accent:#1769aa;--accent-soft:#eaf4fb;
-  --quote:#f8fafc;--code:#f3f5f7;--max:1180px;--measure:760px;
-  --serif:Georgia,"Times New Roman",Times,serif;
-  --sans:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:86px}
-body{margin:0;background:var(--bg);color:var(--text);font-family:var(--serif);line-height:1.72;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
-button{font:inherit}a{color:var(--accent);text-decoration:underline;text-decoration-thickness:.06em;text-underline-offset:.14em}a:hover{color:#0b4f8a}
-:focus-visible{outline:3px solid #79bdf0;outline-offset:3px}
-.skip{position:fixed;left:14px;top:10px;z-index:200;background:var(--text);color:var(--bg);padding:9px 12px;border-radius:5px;font:600 13px var(--sans);transform:translateY(-150%);transition:transform .15s}.skip:focus{transform:none}
-.progress{position:fixed;z-index:100;left:0;right:0;top:0;height:3px;background:transparent}.progress i{display:block;height:100%;width:0;background:var(--accent)}
-.topbar{position:sticky;top:0;z-index:90;background:rgba(255,255,255,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
-.topbar-inner{height:64px;max-width:var(--max);margin:auto;padding:0 28px;display:flex;align-items:center;justify-content:space-between;gap:20px;font-family:var(--sans)}
-.brand{font-weight:750;letter-spacing:-.025em;color:var(--text);text-decoration:none}.brand:hover{text-decoration:none}.brand span{font-weight:450;color:var(--muted);margin-left:8px}
-.tools{display:flex;align-items:center;gap:4px}.tool{border:1px solid transparent;background:transparent;color:var(--muted);padding:7px 9px;border-radius:6px;cursor:pointer;font-size:13px}.tool:hover{background:var(--surface);border-color:var(--line);color:var(--text)}
-.layout{max-width:var(--max);margin:auto;padding:54px 28px 80px;display:grid;grid-template-columns:190px minmax(0,var(--measure));gap:48px}.article-body{position:relative}
-.sidebar{font-family:var(--sans);font-size:12.5px;color:var(--muted)}.sidebar-inner{position:sticky;top:88px}.eyebrow{font-size:10px;font-weight:750;letter-spacing:.13em;text-transform:uppercase;color:var(--accent);margin:0 0 13px}.toc{border-left:1px solid var(--line);padding-left:14px}.toc a{display:block;padding:5px 0;color:var(--muted);line-height:1.35;text-decoration:none}.toc a:hover{text-decoration:underline}.toc a.active{color:var(--text);font-weight:700}.reading-meta{margin-top:24px;padding-top:16px;border-top:1px solid var(--line);line-height:1.55}.reading-meta strong{color:var(--text)}
-.article-header{border-bottom:1px solid var(--line);padding-bottom:31px;margin-bottom:35px}.kicker{font:700 11px/1.2 var(--sans);letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:15px}.article-header h1{font-weight:600;letter-spacing:-.04em;font-size:clamp(2.55rem,5vw,4.35rem);line-height:1.04;margin:0 0 19px;max-width:17ch}.dek{font-size:1.22rem;line-height:1.55;color:#4b5563;margin:0 0 23px;max-width:61ch}.byline{font:13px/1.55 var(--sans);color:var(--muted);display:flex;flex-wrap:wrap;gap:5px 13px}.byline strong{color:var(--text)}
-.abstract{margin-top:25px;padding:17px 19px;background:var(--surface);border-left:3px solid var(--accent);font:14px/1.65 var(--sans)}.abstract strong{display:block;font-size:11px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:5px;color:var(--text)}
-.article-body{font-size:18px}.article-body p{margin:0 0 1.35em}.article-body h2{font-size:1.66rem;line-height:1.2;margin:2.7em 0 .75em;font-weight:650;letter-spacing:-.02em;scroll-margin-top:92px}.article-body h3{font-size:1.23rem;line-height:1.3;margin:2.15em 0 .6em;font-weight:650;scroll-margin-top:92px}.article-body ul,.article-body ol{padding-left:1.35em;margin:0 0 1.45em}.article-body li{padding-left:.22em;margin:.34em 0}.article-body blockquote{margin:2.1em 0;padding:1.15em 1.35em;border-left:3px solid var(--accent);background:var(--quote);font-size:1.08em;line-height:1.65}.article-body blockquote p:last-child{margin-bottom:0}.article-body code{font: .84em ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;background:var(--code);padding:.12em .3em;border-radius:4px}.article-body pre{overflow:auto;background:#15191d;color:#edf2f5;padding:17px;border-radius:6px;font:13.5px/1.6 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;margin:1.6em 0}.article-body pre code{background:none;padding:0}.article-body figure{margin:2.45em 0}.figure-placeholder{aspect-ratio:16/7;background:linear-gradient(135deg,#edf3f6,#fafbfc);border:1px solid var(--line);display:grid;place-items:center;text-align:center;padding:20px;font:13px/1.5 var(--sans);color:var(--muted)}figcaption{font:12px/1.55 var(--sans);color:var(--muted);margin-top:9px}.lead-drop:first-letter{font-size:3.7em;float:left;line-height:.82;padding:8px 9px 0 0;color:var(--accent)}
-.callout{border:1px solid var(--line);background:var(--surface);padding:17px 19px;margin:2em 0;font:14px/1.65 var(--sans)}.callout strong{display:block;margin-bottom:4px;color:var(--text)}
-.references{border-top:1px solid var(--line);margin-top:45px;padding-top:2px}.references ol{padding-left:1.5em}.references li{padding-left:.25em;margin:.65em 0}.citation{font:13px/1.6 var(--sans);color:var(--muted)}
-.article-end{margin-top:42px;padding-top:22px;border-top:1px solid var(--line);font-family:var(--sans)}.article-end-title{font-size:12px;font-weight:700;color:var(--text)}.share-row{display:flex;gap:7px;flex-wrap:wrap;margin:13px 0 10px}.share{border:1px solid var(--line);background:var(--bg);padding:8px 11px;border-radius:5px;color:var(--text);cursor:pointer;font-size:12.5px}.share:hover{background:var(--surface);border-color:#b8c0c8}.status{font-size:12px;color:var(--muted);min-height:1.4em}
-footer{max-width:var(--max);margin:auto;padding:24px 28px 38px;border-top:1px solid var(--line);font:12px/1.6 var(--sans);color:var(--muted);display:flex;justify-content:space-between;gap:20px}
-body.dark{--bg:#0b0d0f;--surface:#12161a;--surface-2:#171c21;--text:#e8edf0;--muted:#a3adb5;--faint:#7e8992;--line:#2a333b;--accent:#69b9ed;--quote:#11171c;--code:#171d22}
-body.dark .topbar{background:rgba(11,13,15,.94)}body.dark .dek{color:#b8c2ca}body.dark .figure-placeholder{background:linear-gradient(135deg,#11181d,#151b20)}body.dark .tool:hover{background:var(--surface)}
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Outreach — a focused, scholarly reading page for the Odyssey research archive."
+    />
+    <meta name="theme-color" content="#070b0d" id="theme-color" />
+    <meta name="color-scheme" content="dark light" />
 
-/* ---------- Consistent navigation system ---------- */
-.topbar-inner{position:relative}
-.brand{flex:0 0 auto}
-.main-nav{display:flex;align-items:center;justify-content:center;gap:2px;margin-left:auto}
-.main-nav a{color:var(--muted);text-decoration:none;font:600 12px/1 var(--sans);padding:9px 10px;border-radius:6px;white-space:nowrap}
-.main-nav a:hover,.main-nav a.active{color:var(--text);background:var(--surface)}
-.tools{margin-left:8px}
-.menu-btn{display:none;border:1px solid var(--line);background:var(--bg);color:var(--text);padding:7px 9px;border-radius:6px;cursor:pointer;font:600 15px/1 var(--sans)}
-.menu-btn:hover{background:var(--surface)}
-.mobile-nav{display:none;border-top:1px solid var(--line);background:var(--bg)}
-.mobile-nav nav{max-width:var(--max);margin:auto;padding:8px 17px 12px;display:grid;grid-template-columns:1fr 1fr;gap:2px 8px}
-.mobile-nav a{padding:9px 8px;border-radius:6px;color:var(--muted);font:600 12px/1.3 var(--sans);text-decoration:none}
-.mobile-nav a:hover,.mobile-nav a.active{background:var(--surface);color:var(--text)}
-.breadcrumb{display:flex;align-items:center;gap:9px;color:var(--muted);font:12px/1.4 var(--sans);margin:0 0 25px}
-.breadcrumb a{color:var(--muted);text-decoration:none}
-.breadcrumb a:hover{color:var(--text);text-decoration:underline}
-.breadcrumb strong{color:var(--text);font-weight:650}
-.toc a{display:flex;align-items:baseline;gap:8px}
-.toc a span{font-variant-numeric:tabular-nums;color:var(--faint);font-size:10px;min-width:18px}
-.toc a.active span{color:var(--accent)}
-.reading-divider{height:1px;background:var(--line);margin:13px 0}
-.back-top{color:var(--muted)!important;text-decoration:none!important;font-size:12px}
-.back-top:hover{color:var(--text)!important;text-decoration:underline!important}
-.article-pager{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:40px;padding-top:18px;border-top:1px solid var(--line);font-family:var(--sans)}
-.pager{display:flex;flex-direction:column;gap:5px;padding:14px 16px;border:1px solid var(--line);border-radius:7px;text-decoration:none;background:var(--bg)}
-.pager:hover{background:var(--surface);border-color:#b8c0c8}
-.pager span{font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);font-weight:700}
-.pager strong{font-size:13px;color:var(--text)}
-.pager.next{text-align:right}
+    <title>Outreach — Scattered Research, Held Together | Odyssey</title>
 
-@media (max-width:1080px){
-  .main-nav a{padding-left:7px;padding-right:7px;font-size:11.5px}
-}
+    <!-- Inline SVG Favicon (Cyan Radar/Compass) — matches index.html -->
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='40' stroke='%233ecbdb' stroke-width='10' fill='none'/%3E%3Ccircle cx='100' cy='50' r='15' fill='%233ecbdb'/%3E%3C/svg%3E"
+    />
 
-@media (min-width:721px){
-  .layout{grid-template-columns:minmax(0,var(--measure)) 190px}
-  .sidebar{grid-column:2;grid-row:1}
-  article{grid-column:1;grid-row:1}
-}
-@media (max-width:900px){.layout{grid-template-columns:minmax(0,1fr) 170px;gap:34px}}
-@media (max-width:720px){
-html{scroll-padding-top:72px}
-.topbar-inner{height:56px;padding:0 17px}
-.brand span{display:none}
-.main-nav{display:none}
-.tools{margin-left:auto}
-.menu-btn{display:block}
-.mobile-nav{display:block}
-.mobile-nav[hidden]{display:none}
-.layout{display:block;padding:30px 18px 62px}
-.sidebar{display:none}
-.breadcrumb{margin-bottom:20px;font-size:11px}
-.article-pager{grid-template-columns:1fr;gap:8px}
-.pager.next{text-align:left}.article-header{padding-bottom:27px;margin-bottom:29px}.article-header h1{font-size:clamp(2.35rem,11vw,3.3rem);max-width:none}.dek{font-size:1.1rem}.article-body{font-size:18px}.article-body h2{font-size:1.5rem}.article-body blockquote{margin-left:0;margin-right:0;padding:1rem}.article-body pre{margin-left:-4px;margin-right:-4px}.article-body figure{margin-left:-18px;margin-right:-18px}.article-body figcaption{padding:0 18px}.abstract{font-size:13.5px}footer{padding:21px 18px 30px;display:block}footer span{display:block;margin:3px 0}}
-@media (max-width:430px){.topbar-inner{padding:0 13px}.tool{padding:7px}.layout{padding-left:16px;padding-right:16px}.article-body figure{margin-left:-16px;margin-right:-16px}.article-body figcaption{padding:0 16px}}
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.skip{transition:none}}
-@media print{.topbar,.progress,.sidebar,.share-row,footer,.skip{display:none!important}.layout{display:block;max-width:760px;padding:0}.article-body{font-size:12pt}.article-header h1{font-size:30pt}.article-header{border:0}.article-body a{color:inherit;text-decoration:underline}.abstract{break-inside:avoid}.references{break-before:auto}}
-</style>
-</head>
-<body>
-<a class="skip" href="#article">Skip to article</a>
-<div class="progress" aria-hidden="true"><i id="progressBar"></i></div>
-<header class="topbar">
-  <div class="topbar-inner">
-    <a class="brand" href="#top" aria-label="Go to top">Odyssey <span>Research Archive</span></a>
-    <nav class="main-nav" aria-label="Primary navigation">
-      <a href="#context">Overview</a>
-      <a href="#problem">Problem</a>
-      <a href="#approach">System</a>
-      <a href="#discoverability">Discoverability</a>
-      <a href="#reuse">Outreach</a>
-      <a href="#principles">Principles</a>
-      <a href="#references">References</a>
-    </nav>
-    <div class="tools" aria-label="Page tools">
-      <button class="tool" id="themeBtn" type="button" aria-label="Switch to dark mode" title="Toggle theme">◐ Theme</button>
-      <button class="tool" id="printBtn" type="button" title="Print article">Print</button>
-      <button class="menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="mobileNav" aria-label="Open navigation">☰</button>
-    </div>
-  </div>
-  <div class="mobile-nav" id="mobileNav" hidden>
-    <nav aria-label="Mobile navigation">
-      <a href="#context">01 · Overview</a>
-      <a href="#problem">02 · The problem</a>
-      <a href="#approach">03 · Archive as a system</a>
-      <a href="#discoverability">04 · Discoverability</a>
-      <a href="#reuse">05 · Reuse and outreach</a>
-      <a href="#principles">06 · Design principles</a>
-      <a href="#conclusion">07 · Conclusion</a>
-      <a href="#references">08 · References</a>
-    </nav>
-  </div>
-</header>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&family=Source+Serif+4:ital,wght@0,400;0,500;0,600;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        /* ---- Odyssey design tokens (shared with index.html) ---- */
+        --bg: #070b0d;
+        --surface: #0d1519;
+        --surface-2: #111b1f;
+        --text: #dfeef0;
+        --muted: #86a0a6;
+        --faint: #4c6167;
+        --line: #182428;
+        --accent: #3ecbdb;
+        --accent-bright: #8be9f2;
+        --accent-dim: #1f4d54;
+        --accent-soft: rgba(62, 203, 219, 0.1);
+        --heading: #eef7f8;
+        --quote: #0d1519;
+        --code: #111b1f;
+        --max: 900px;
+        --measure: 760px;
+        --serif: "Source Serif 4", Georgia, "Times New Roman", Times, serif;
+        --sans:
+          "Inter", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+          "Segoe UI", sans-serif;
+        --mono: "IBM Plex Mono", monospace;
+      }
+      body.light {
+        --bg: #edf5f4;
+        --surface: #ffffff;
+        --surface-2: #f1f6f5;
+        --text: #1d3d42;
+        --muted: #527277;
+        --faint: #6c888b;
+        --line: #cbdcdb;
+        --accent: #087f8d;
+        --accent-bright: #075d67;
+        --accent-dim: #79aeb3;
+        --accent-soft: #eaf4fb;
+        --heading: #102b30;
+        --quote: #ffffff;
+        --code: #f1f6f5;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 16px;
+      }
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--text);
+        font-family: var(--serif);
+        line-height: 1.72;
+        -webkit-font-smoothing: antialiased;
+        text-rendering: optimizeLegibility;
+      }
+      button {
+        font: inherit;
+      }
+      a {
+        color: var(--accent);
+        text-decoration: underline;
+        text-decoration-thickness: 0.06em;
+        text-underline-offset: 0.14em;
+      }
+      a:hover {
+        color: var(--accent-bright);
+      }
+      :focus-visible {
+        outline: 1.5px solid var(--accent);
+        outline-offset: 3px;
+      }
+      .skip {
+        position: fixed;
+        left: 14px;
+        top: 10px;
+        z-index: 200;
+        background: var(--text);
+        color: var(--bg);
+        padding: 9px 12px;
+        border-radius: 5px;
+        font: 600 13px var(--sans);
+        transform: translateY(-150%);
+        transition: transform 0.15s;
+      }
+      .skip:focus {
+        transform: none;
+      }
+      .progress {
+        position: fixed;
+        z-index: 100;
+        left: 0;
+        right: 0;
+        top: 0;
+        height: 3px;
+        background: transparent;
+      }
+      .progress i {
+        display: block;
+        height: 100%;
+        width: 0;
+        background: var(--accent);
+      }
+      .frame {
+        position: relative;
+        z-index: 1;
+        width: 100%;
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 0 1.75rem;
+      }
+      @media (max-width: 679px) {
+        .frame {
+          padding-left: 1rem;
+          padding-right: 1rem;
+        }
+      }
+      .masthead {
+        border-bottom: 1px solid var(--line);
+        padding: 1.6rem 0 1.4rem;
+      }
+      .layout {
+        max-width: var(--max);
+        margin: auto;
+        padding: 54px 28px 80px;
+        display: grid;
+        grid-template-columns: 190px minmax(0, var(--measure));
+        gap: 48px;
+      }
+      .article-body {
+        position: relative;
+      }
+      .sidebar {
+        font-family: var(--sans);
+        font-size: 12.5px;
+        color: var(--muted);
+      }
+      .sidebar-inner {
+        position: sticky;
+        top: 24px;
+      }
+      .eyebrow {
+        font-size: 10px;
+        font-weight: 750;
+        letter-spacing: 0.13em;
+        text-transform: uppercase;
+        color: var(--accent);
+        margin: 0 0 13px;
+      }
+      .toc {
+        border-left: 1px solid var(--line);
+        padding-left: 14px;
+      }
+      .toc a {
+        display: block;
+        padding: 5px 0;
+        color: var(--muted);
+        line-height: 1.35;
+        text-decoration: none;
+      }
+      .toc a:hover {
+        text-decoration: underline;
+      }
+      .toc a.active {
+        color: var(--accent-bright);
+        font-weight: 700;
+      }
+      .reading-meta {
+        margin-top: 24px;
+        padding-top: 16px;
+        border-top: 1px solid var(--line);
+      }
+      .reading-actions {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+      }
+      .print-btn {
+        background: none;
+        border: none;
+        padding: 0;
+        margin: 0;
+        color: var(--muted);
+        font: 12px/1 var(--sans);
+        cursor: pointer;
+      }
+      .print-btn:hover {
+        color: var(--accent-bright);
+        text-decoration: underline;
+      }
+      .article-header {
+        border-bottom: 1px solid var(--line);
+        padding-bottom: 31px;
+        margin-bottom: 35px;
+      }
+      .kicker {
+        font: 500 11px/1.2 var(--mono);
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: var(--accent);
+        margin-bottom: 15px;
+      }
+      .article-header h1 {
+        font-family: var(--serif);
+        font-weight: 500;
+        color: var(--heading);
+        letter-spacing: -0.01em;
+        font-size: clamp(2.35rem, 5vw, 3.7rem);
+        line-height: 1.12;
+        margin: 0 0 19px;
+        max-width: 17ch;
+      }
+      .dek {
+        font-size: 1.15rem;
+        line-height: 1.6;
+        color: var(--muted);
+        margin: 0 0 23px;
+        max-width: 61ch;
+      }
+      .byline {
+        font: 13px/1.55 var(--mono);
+        color: var(--muted);
+        display: flex;
+        flex-wrap: wrap;
+        gap: 5px 13px;
+      }
+      .byline strong {
+        color: var(--heading);
+      }
+      .hero-figure {
+        margin: 26px 0 0;
+      }
+      .hero-figure img {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 16/9;
+        object-fit: cover;
+        border-radius: 2px;
+        display: block;
+        border: 1px solid var(--line);
+      }
+      .hero-figure figcaption {
+        font: 12px/1.5 var(--sans);
+        color: var(--muted);
+        margin-top: 9px;
+      }
+      .article-body {
+        font-size: 18px;
+      }
+      .article-body p {
+        margin: 0 0 1.35em;
+      }
+      .article-body h2 {
+        color: var(--heading);
+        font-size: 1.66rem;
+        line-height: 1.2;
+        margin: 2.7em 0 0.75em;
+        font-weight: 650;
+        letter-spacing: -0.02em;
+        scroll-margin-top: 20px;
+      }
+      .article-body h3 {
+        color: var(--heading);
+        font-size: 1.23rem;
+        line-height: 1.3;
+        margin: 2.15em 0 0.6em;
+        font-weight: 650;
+        scroll-margin-top: 20px;
+      }
+      .article-body ul,
+      .article-body ol {
+        padding-left: 1.35em;
+        margin: 0 0 1.45em;
+      }
+      .article-body li {
+        padding-left: 0.22em;
+        margin: 0.34em 0;
+      }
+      .article-body blockquote {
+        margin: 2.1em 0;
+        padding: 1.15em 1.35em;
+        border-left: 3px solid var(--accent);
+        background: var(--quote);
+        font-size: 1.08em;
+        line-height: 1.65;
+      }
+      .article-body blockquote p:last-child {
+        margin-bottom: 0;
+      }
+      .article-body code {
+        font:
+          0.84em ui-monospace,
+          SFMono-Regular,
+          Menlo,
+          Consolas,
+          monospace;
+        background: var(--code);
+        padding: 0.12em 0.3em;
+        border-radius: 4px;
+      }
+      .article-body pre {
+        overflow: auto;
+        background: #15191d;
+        color: #edf2f5;
+        padding: 17px;
+        border-radius: 6px;
+        font:
+          13.5px/1.6 ui-monospace,
+          SFMono-Regular,
+          Menlo,
+          Consolas,
+          monospace;
+        margin: 1.6em 0;
+      }
+      .article-body pre code {
+        background: none;
+        padding: 0;
+      }
+      .article-body figure {
+        margin: 2.45em 0;
+      }
+      .figure-placeholder {
+        aspect-ratio: 16/7;
+        background: linear-gradient(135deg, #11181d, #151b20);
+        border: 1px solid var(--line);
+        display: grid;
+        place-items: center;
+        text-align: center;
+        padding: 20px;
+        font: 13px/1.5 var(--sans);
+        color: var(--muted);
+      }
+      body.light .figure-placeholder {
+        background: linear-gradient(135deg, #edf3f6, #fafbfc);
+      }
+      figcaption {
+        font: 12px/1.55 var(--sans);
+        color: var(--muted);
+        margin-top: 9px;
+      }
+      .lead-drop:first-letter {
+        font-size: 3.7em;
+        float: left;
+        line-height: 0.82;
+        padding: 8px 9px 0 0;
+        color: var(--accent);
+      }
+      .callout {
+        border: 1px solid var(--line);
+        background: var(--surface);
+        padding: 17px 19px;
+        margin: 2em 0;
+        font: 14px/1.65 var(--sans);
+      }
+      .callout strong {
+        display: block;
+        margin-bottom: 4px;
+        color: var(--text);
+      }
+      .references {
+        border-top: 1px solid var(--line);
+        margin-top: 45px;
+        padding-top: 2px;
+      }
+      .references ol {
+        padding-left: 1.5em;
+      }
+      .references li {
+        padding-left: 0.25em;
+        margin: 0.65em 0;
+      }
+      .citation {
+        font: 13px/1.6 var(--sans);
+        color: var(--muted);
+      }
+      footer.site {
+        position: relative;
+        z-index: 1;
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 2.2rem 1.75rem 3rem;
+        font-family: var(--mono);
+        font-size: 0.74rem;
+        color: var(--faint);
+        border-top: 1px solid var(--line);
+      }
 
-<main class="layout" id="top">
-  <aside class="sidebar" aria-label="Article navigation">
-    <div class="sidebar-inner">
-      <div class="eyebrow">On this page</div>
-      <nav class="toc" id="toc">
-        <a href="#context"><span>01</span> Overview</a>
-        <a href="#problem"><span>02</span> The problem</a>
-        <a href="#approach"><span>03</span> Archive as a system</a>
-        <a href="#discoverability"><span>04</span> Discoverability</a>
-        <a href="#reuse"><span>05</span> Reuse and outreach</a>
-        <a href="#principles"><span>06</span> Design principles</a>
-        <a href="#conclusion"><span>07</span> Conclusion</a>
-        <a href="#references"><span>08</span> References</a>
-      </nav>
-      <div class="reading-meta">
-        <strong>Reading time</strong><br>6–8 minutes
-        <div class="reading-divider"></div>
-        <a class="back-top" href="#top">↑ Back to top</a>
-      </div>
-    </div>
-  </aside>
+      /* ---------- Odyssey masthead (copied from index.html) ---------- */
+      .masthead-row {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 0.4rem 1.2rem;
+      }
+      .wordmark {
+        font-family: var(--serif);
+        font-weight: 600;
+        font-size: 1.3rem;
+        letter-spacing: 0.01em;
+        color: var(--heading);
+        text-decoration: none;
+      }
+      .masthead-right {
+        display: flex;
+        align-items: center;
+        gap: 1.6rem;
+      }
+      .portal-tag {
+        font-family: var(--mono);
+        font-size: 0.72rem;
+        color: var(--muted);
+      }
+      .nav-link {
+        font-family: var(--mono);
+        font-size: 0.78rem;
+        color: var(--accent);
+        text-decoration: none;
+        border-bottom: 1px solid transparent;
+      }
+      .nav-link:hover {
+        border-bottom-color: var(--accent);
+        color: var(--accent-bright);
+      }
+      .theme-toggle {
+        width: 2.2rem;
+        height: 2.2rem;
+        display: inline-grid;
+        place-items: center;
+        border: 1px solid var(--accent-dim);
+        border-radius: 50%;
+        background: transparent;
+        color: var(--accent-bright);
+        cursor: pointer;
+        font-size: 1rem;
+        line-height: 1;
+      }
+      .theme-toggle:hover {
+        border-color: var(--accent);
+        color: var(--accent);
+      }
+      @media (max-width: 679px) {
+        .masthead-right {
+          width: 100%;
+          justify-content: space-between;
+          gap: 0.8rem;
+        }
+        .portal-tag {
+          min-width: 0;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
+      }
 
-  <article id="article">
-    <header class="article-header">
-      <div class="kicker">Research outreach · Article</div>
-      <h1>Scattered research, held together as one living archive</h1>
-      <p class="dek">A focused reading page for turning expedition reports, datasets, publications and media into a connected public research record.</p>
-      <div class="byline"><span><strong>Odyssey Research Archive</strong></span><span aria-hidden="true">·</span><span>Outreach edition</span><span aria-hidden="true">·</span><time datetime="2026">2026</time></div>
-      <div class="abstract"><strong>Abstract</strong>Research material is often distributed across reports, datasets, photographs, publications and field records. A reading-first archive can connect those materials without turning the reader's experience into a complex application. This page explores the information hierarchy and editorial patterns that make such a record easier to discover, understand and reuse.</div>
-    </header>
+      .toc a {
+        display: flex;
+        align-items: baseline;
+        gap: 8px;
+      }
+      .toc a span {
+        font-variant-numeric: tabular-nums;
+        color: var(--faint);
+        font-size: 10px;
+        min-width: 18px;
+      }
+      .toc a.active span {
+        color: var(--accent);
+      }
+      .back-top {
+        color: var(--muted) !important;
+        text-decoration: none !important;
+        font-size: 12px;
+      }
+      .back-top:hover {
+        color: var(--accent-bright) !important;
+        text-decoration: underline !important;
+      }
 
-    <div class="article-body">
-      <p class="lead-drop" id="context">Research rarely arrives as a single, tidy document. An expedition may produce reports, measurements, photographs, publications, field notes and other records, often stored by different teams and at different times. A useful public archive therefore has to do more than display files: it has to help a reader understand how those pieces belong together.</p>
-
-      <p>This page is designed around that reading task. Its visual language combines the restrained hierarchy of scholarly publishing with the comfortable long-form rhythm of a modern editorial article: a strong title, clear metadata, a narrow reading measure, visible section structure, references and very little interface competing with the text.</p>
-
-      <h2 id="problem">The problem: information without context</h2>
-      <p>A list of documents is easy to build and surprisingly hard to use. A researcher looking for one report may also need to know who produced it, which expedition it belongs to, what dataset supports it, whether a later publication discusses the same observation, and where associated images or measurements can be found.</p>
-      <p>The central design problem is therefore contextual rather than purely visual. The archive should make relationships between records legible without forcing the reader through a complicated application.</p>
-
-      <blockquote><p>Good research outreach does not flatten research into a headline. It gives the reader enough structure to move from discovery to understanding.</p></blockquote>
-
-      <h2 id="approach">An archive as a system</h2>
-      <p>The Odyssey project presents an archive-oriented interface around expedition reports, datasets, publications, photographs and video. For an article reader, the important idea is simple: every individual record should be useful on its own while still pointing toward its surrounding evidence and context.</p>
-      <div class="callout"><strong>Reading-first principle</strong>Keep navigation and controls quiet. The article itself should remain the dominant object on the page, with metadata and related material supporting—not interrupting—the reading flow.</div>
-
-      <h2 id="discoverability">Discoverability without distraction</h2>
-      <p>Scholarly article pages generally establish the document's identity early: title, authorship, publication information, abstract or summary, then the body and references. This makes the page predictable. Readers can skim the opening information, jump to a section, or read continuously without learning a new interface.</p>
-      <p>For a research-outreach archive, that pattern can be extended with a compact table of contents and section anchors. On larger screens the table of contents stays available at the side; on small screens it disappears so the text gets the full width.</p>
-      <ul>
-        <li><strong>Identity first:</strong> title, short description and metadata appear before the main text.</li>
-        <li><strong>One reading measure:</strong> the body remains narrow enough for comfortable line length.</li>
-        <li><strong>Stable hierarchy:</strong> headings, quotations, figures and references have distinct visual roles.</li>
-        <li><strong>Progressive support:</strong> extra controls exist, but never dominate the article.</li>
-      </ul>
-
-      <h2 id="reuse">Reuse and outreach</h2>
-      <p>An archive becomes more valuable when its records can be reused. A reader might arrive through a search engine, a citation, an institutional page or a social post. The article page should therefore work as a standalone destination: the title explains what it is, the metadata identifies it, the content provides context, and references let an interested reader continue exploring.</p>
-      <p>This also changes how visual design should be judged. A page can be visually impressive and still fail as an outreach tool if paragraphs are too wide, text contrast is weak, links are difficult to identify, headings do not create a useful outline, or mobile readers have to fight the layout.</p>
-
-      <figure>
-        <div class="figure-placeholder" role="img" aria-label="Diagram showing a research record connected to context, evidence and related records">Research record&nbsp; → &nbsp;context&nbsp; → &nbsp;evidence&nbsp; → &nbsp;related records</div>
-        <figcaption>Figure 1. A simple mental model for a connected research record. Replace this placeholder with an approved archive image or figure when one is available.</figcaption>
-      </figure>
-
-      <h2 id="principles">Design principles for the reading page</h2>
-      <h3>1. Make the typography do the work</h3>
-      <p>A serif reading face, generous line height and restrained heading sizes create an editorial rhythm without requiring cards, gradients or decorative animation. The sans-serif family is reserved for metadata and controls so the article remains visually primary.</p>
-      <h3>2. Keep the interface reversible</h3>
-      <p>The page includes a light/dark theme toggle and a print action, but both are optional. Readers who do not need them can ignore them. The page also respects reduced-motion preferences and remains functional when JavaScript is unavailable.</p>
-      <h3>3. Treat mobile as a first-class reading environment</h3>
-      <p>On narrow screens the side navigation is removed, the title scales down, figures can use the full available width, and controls remain reachable. The content never depends on hover states or precise pointer interaction.</p>
-      <h3>4. References are part of the article</h3>
-      <p>References should not feel like an afterthought. They provide provenance and a path for deeper reading. The final section below is intentionally plain and readable rather than hidden behind an interaction.</p>
-
-      <h2 id="conclusion">Conclusion</h2>
-      <p>A strong research-outreach page is ultimately a quiet piece of infrastructure. It helps a reader arrive, orient themselves, read deeply, and leave with enough context to continue. The best visual decisions are therefore the ones that disappear into the reading experience.</p>
-      <p>For Odyssey, that means preserving the project's research-archive character while giving individual records the focused treatment of a serious article page: one clear reading path, useful metadata, predictable navigation and enough structure to make the underlying research easier to discover and reuse.</p>
-
-      <section class="references" id="references" aria-labelledby="references-title">
-        <h2 id="references-title">References</h2>
-        <ol class="citation">
-          <li>Odyssey. <em>index.html</em>. GitHub repository, accessed September 2026. <a href="https://github.com/Moderatorboy/Odyssey/blob/main/index.html" target="_blank" rel="noopener noreferrer">Source page</a>.</li>
-          <li>Springer Nature. <em>Multiple Ecosystem Effects of Extreme Weather Events in the Arctic</em>. <em>Ecosystems</em>. DOI: 10.1007/s10021-020-00507-6. <a href="https://link.springer.com/article/10.1007/s10021-020-00507-6" target="_blank" rel="noopener noreferrer">Article page</a>.</li>
-          <li>Galer, N. <em>A Quick Intro Guide to Asynchronous Programming in Python (using asyncio)</em>. Wix Engineering, Medium, 2022. <a href="https://medium.com/wix-engineering/a-quick-intro-guide-to-asynchronous-programming-in-python-using-asyncio-18e42e652272" target="_blank" rel="noopener noreferrer">Article page</a>.</li>
-        </ol>
-      </section>
-
-      <div class="article-end">
-        <div class="article-end-title">Article tools</div>
-        <div class="share-row">
-          <button class="share" id="copyLink" type="button">Copy page link</button>
-          <button class="share" id="copyCitation" type="button">Copy citation</button>
-          <button class="share" id="topBtn" type="button">Back to top ↑</button>
+      @media (min-width: 721px) {
+        .layout {
+          grid-template-columns: minmax(0, var(--measure)) 190px;
+        }
+        .sidebar {
+          grid-column: 2;
+          grid-row: 1;
+        }
+        article {
+          grid-column: 1;
+          grid-row: 1;
+        }
+      }
+      @media (max-width: 900px) {
+        .layout {
+          grid-template-columns: minmax(0, 1fr) 170px;
+          gap: 34px;
+        }
+      }
+      @media (max-width: 720px) {
+        .masthead-row {
+          padding: 0.9rem 17px;
+        }
+        .layout {
+          display: block;
+          padding: 30px 18px 62px;
+        }
+        .sidebar {
+          display: none;
+        }
+        .article-header {
+          padding-bottom: 27px;
+          margin-bottom: 29px;
+        }
+        .article-header h1 {
+          font-size: clamp(2.35rem, 11vw, 3.3rem);
+          max-width: none;
+        }
+        .dek {
+          font-size: 1.1rem;
+        }
+        .article-body {
+          font-size: 18px;
+        }
+        .article-body h2 {
+          font-size: 1.5rem;
+        }
+        .article-body blockquote {
+          margin-left: 0;
+          margin-right: 0;
+          padding: 1rem;
+        }
+        .article-body pre {
+          margin-left: -4px;
+          margin-right: -4px;
+        }
+        .article-body figure {
+          margin-left: -18px;
+          margin-right: -18px;
+        }
+        .article-body figcaption {
+          padding: 0 18px;
+        }
+        footer.site {
+          padding: 21px 18px 30px;
+        }
+      }
+      @media (max-width: 430px) {
+        .layout {
+          padding-left: 16px;
+          padding-right: 16px;
+        }
+        .article-body figure {
+          margin-left: -16px;
+          margin-right: -16px;
+        }
+        .article-body figcaption {
+          padding: 0 16px;
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+        .skip {
+          transition: none;
+        }
+      }
+      @media print {
+        .masthead,
+        .progress,
+        .sidebar,
+        .skip {
+          display: none !important;
+        }
+        .layout {
+          display: block;
+          max-width: 760px;
+          padding: 0;
+        }
+        .article-body {
+          font-size: 12pt;
+        }
+        .article-header h1 {
+          font-size: 30pt;
+        }
+        .article-header {
+          border: 0;
+        }
+        .article-body a {
+          color: inherit;
+          text-decoration: underline;
+        }
+        .references {
+          break-before: auto;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <a class="skip" href="#article">Skip to article</a>
+    <div class="progress" aria-hidden="true"><i id="progressBar"></i></div>
+    <div class="masthead">
+      <div class="masthead-row frame">
+        <a class="wordmark" href="index.html">Odyssey</a>
+        <div class="masthead-right">
+          <span class="portal-tag">Outreach — Scholarly Reading Page</span>
+          <a class="nav-link" href="archive.html">Archive</a>
+          <button
+            class="theme-toggle"
+            id="themeBtn"
+            type="button"
+            aria-label="Switch to light mode"
+            title="Switch theme"
+          >
+            ☼
+          </button>
         </div>
-        <div class="status" id="status" aria-live="polite"></div>
       </div>
-
-      <nav class="article-pager" aria-label="Article section navigation">
-        <a href="#principles" class="pager prev">
-          <span>Previous</span>
-          <strong>Design principles</strong>
-        </a>
-        <a href="#references" class="pager next">
-          <span>Next</span>
-          <strong>References →</strong>
-        </a>
-      </nav>
     </div>
-  </article>
-</main>
 
-<footer><span>Odyssey Research Archive · outreach.html</span><span>Reading-first interface</span></footer>
+    <main class="layout" id="top">
+      <aside class="sidebar" aria-label="Article navigation">
+        <div class="sidebar-inner">
+          <div class="eyebrow">On this page</div>
+          <nav class="toc" id="toc">
+            <a href="#context"><span>01</span> Overview</a>
+            <a href="#problem"><span>02</span> The problem</a>
+            <a href="#approach"><span>03</span> Archive as a system</a>
+            <a href="#discoverability"><span>04</span> Discoverability</a>
+            <a href="#reuse"><span>05</span> Reuse and outreach</a>
+            <a href="#principles"><span>06</span> Design principles</a>
+            <a href="#conclusion"><span>07</span> Conclusion</a>
+            <a href="#references"><span>08</span> References</a>
+          </nav>
+          <div class="reading-meta">
+            <div class="reading-actions">
+              <a class="back-top" href="#top">↑ Back to top</a>
+              <button
+                class="print-btn"
+                id="printBtn"
+                type="button"
+                title="Print article"
+              >
+                Print
+              </button>
+            </div>
+          </div>
+        </div>
+      </aside>
 
-<script>
-(() => {
-  const body = document.body;
-  const themeBtn = document.getElementById('themeBtn');
-  const progress = document.getElementById('progressBar');
-  const themeMeta = document.getElementById('theme-color');
-  const status = document.getElementById('status');
-  const article = document.getElementById('article');
-  const storageKey = 'odyssey-outreach-theme';
+      <article id="article">
+        <header class="article-header">
+          <div class="kicker">
+            National Centre For Polar and Ocean Research<br />Ministry Of Earth
+            Sciences
+          </div>
+          <h1>Scattered research, held together as one living archive</h1>
+          <p class="dek">
+            A focused reading page for turning expedition reports, datasets,
+            publications and media into a connected public research record.
+          </p>
+          <div class="byline">
+            <span><strong>Author</strong></span
+            ><span aria-hidden="true">·</span><span>Journal</span
+            ><span aria-hidden="true">·</span
+            ><time datetime="2026-01-26">26 Jan, 2026</time>
+          </div>
+          <figure class="hero-figure">
+            <img
+              src="photos/antarctica.png"
+              alt="Iceberg off the coast of Antarctica"
+              loading="eager"
+            />
+            <figcaption>
+              Photograph from the Odyssey polar and ocean research archive.
+            </figcaption>
+          </figure>
+        </header>
 
-  function setTheme(theme, persist = true) {
-    body.classList.toggle('dark', theme === 'dark');
-    themeBtn.textContent = theme === 'dark' ? '☀ Light' : '◐ Theme';
-    themeBtn.setAttribute('aria-label', theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
-    themeMeta.setAttribute('content', theme === 'dark' ? '#0b0d0f' : '#ffffff');
-    if (persist) localStorage.setItem(storageKey, theme);
-  }
+        <div class="article-body">
+          <p class="lead-drop" id="context">
+            Research rarely arrives as a single, tidy document. An expedition
+            may produce reports, measurements, photographs, publications, field
+            notes and other records, often stored by different teams and at
+            different times. A useful public archive therefore has to do more
+            than display files: it has to help a reader understand how those
+            pieces belong together.
+          </p>
 
-  let saved = null;
-  try { saved = localStorage.getItem(storageKey); } catch (_) {}
-  if (saved === 'dark' || saved === 'light') setTheme(saved, false);
-  else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) setTheme('dark', false);
-  else setTheme('light', false);
+          <p>
+            This page is designed around that reading task. Its visual language
+            combines the restrained hierarchy of scholarly publishing with the
+            comfortable long-form rhythm of a modern editorial article: a strong
+            title, clear metadata, a narrow reading measure, visible section
+            structure, references and very little interface competing with the
+            text.
+          </p>
 
-  themeBtn.addEventListener('click', () => setTheme(body.classList.contains('dark') ? 'light' : 'dark'));
-  
-  const menuBtn = document.getElementById('menuBtn');
-  const mobileNav = document.getElementById('mobileNav');
+          <h2 id="problem">The problem: information without context</h2>
+          <p>
+            A list of documents is easy to build and surprisingly hard to use. A
+            researcher looking for one report may also need to know who produced
+            it, which expedition it belongs to, what dataset supports it,
+            whether a later publication discusses the same observation, and
+            where associated images or measurements can be found.
+          </p>
+          <p>
+            The central design problem is therefore contextual rather than
+            purely visual. The archive should make relationships between records
+            legible without forcing the reader through a complicated
+            application.
+          </p>
 
-  function closeMobileNav() {
-    mobileNav.hidden = true;
-    menuBtn.setAttribute('aria-expanded', 'false');
-    menuBtn.setAttribute('aria-label', 'Open navigation');
-    menuBtn.textContent = '☰';
-  }
+          <blockquote>
+            <p>
+              Good research outreach does not flatten research into a headline.
+              It gives the reader enough structure to move from discovery to
+              understanding.
+            </p>
+          </blockquote>
 
-  menuBtn.addEventListener('click', () => {
-    const open = mobileNav.hidden;
-    mobileNav.hidden = !open;
-    menuBtn.setAttribute('aria-expanded', String(open));
-    menuBtn.setAttribute('aria-label', open ? 'Close navigation' : 'Open navigation');
-    menuBtn.textContent = open ? '×' : '☰';
-  });
+          <h2 id="approach">An archive as a system</h2>
+          <p>
+            The Odyssey project presents an archive-oriented interface around
+            expedition reports, datasets, publications, photographs and video.
+            For an article reader, the important idea is simple: every
+            individual record should be useful on its own while still pointing
+            toward its surrounding evidence and context.
+          </p>
+          <div class="callout">
+            <strong>Reading-first principle</strong>Keep navigation and controls
+            quiet. The article itself should remain the dominant object on the
+            page, with metadata and related material supporting—not
+            interrupting—the reading flow.
+          </div>
 
-  document.querySelectorAll('.mobile-nav a').forEach(link => {
-    link.addEventListener('click', closeMobileNav);
-  });
+          <h2 id="discoverability">Discoverability without distraction</h2>
+          <p>
+            Scholarly article pages generally establish the document's identity
+            early: title, authorship, publication information, abstract or
+            summary, then the body and references. This makes the page
+            predictable. Readers can skim the opening information, jump to a
+            section, or read continuously without learning a new interface.
+          </p>
+          <p>
+            For a research-outreach archive, that pattern can be extended with a
+            compact table of contents and section anchors. On larger screens the
+            table of contents stays available at the side; on small screens it
+            disappears so the text gets the full width.
+          </p>
+          <ul>
+            <li>
+              <strong>Identity first:</strong> title, short description and
+              metadata appear before the main text.
+            </li>
+            <li>
+              <strong>One reading measure:</strong> the body remains narrow
+              enough for comfortable line length.
+            </li>
+            <li>
+              <strong>Stable hierarchy:</strong> headings, quotations, figures
+              and references have distinct visual roles.
+            </li>
+            <li>
+              <strong>Progressive support:</strong> extra controls exist, but
+              never dominate the article.
+            </li>
+          </ul>
 
-  document.getElementById('printBtn').addEventListener('click', () => window.print());
+          <h2 id="reuse">Reuse and outreach</h2>
+          <p>
+            An archive becomes more valuable when its records can be reused. A
+            reader might arrive through a search engine, a citation, an
+            institutional page or a social post. The article page should
+            therefore work as a standalone destination: the title explains what
+            it is, the metadata identifies it, the content provides context, and
+            references let an interested reader continue exploring.
+          </p>
+          <p>
+            This also changes how visual design should be judged. A page can be
+            visually impressive and still fail as an outreach tool if paragraphs
+            are too wide, text contrast is weak, links are difficult to
+            identify, headings do not create a useful outline, or mobile readers
+            have to fight the layout.
+          </p>
 
-  function updateProgress() {
-    const rect = article.getBoundingClientRect();
-    const total = Math.max(1, article.offsetHeight - window.innerHeight);
-    const current = Math.min(total, Math.max(0, -rect.top));
-    progress.style.width = ((current / total) * 100).toFixed(2) + '%';
-  }
-  window.addEventListener('scroll', updateProgress, { passive: true });
-  window.addEventListener('resize', updateProgress);
-  updateProgress();
+          <figure>
+            <div
+              class="figure-placeholder"
+              role="img"
+              aria-label="Diagram showing a research record connected to context, evidence and related records"
+            >
+              Research record&nbsp; → &nbsp;context&nbsp; → &nbsp;evidence&nbsp;
+              → &nbsp;related records
+            </div>
+            <figcaption>
+              Figure 1. A simple mental model for a connected research record.
+              Replace this placeholder with an approved archive image or figure
+              when one is available.
+            </figcaption>
+          </figure>
 
-  const allNavLinks = [...document.querySelectorAll('.toc a, .main-nav a, .mobile-nav a')];
-  const sections = ['context','problem','approach','discoverability','reuse','principles','conclusion','references']
-    .map(id => document.getElementById(id)).filter(Boolean);
+          <h2 id="principles">Design principles for the reading page</h2>
+          <h3>1. Make the typography do the work</h3>
+          <p>
+            A serif reading face, generous line height and restrained heading
+            sizes create an editorial rhythm without requiring cards, gradients
+            or decorative animation. The sans-serif family is reserved for
+            metadata and controls so the article remains visually primary.
+          </p>
+          <h3>2. Keep the interface reversible</h3>
+          <p>
+            The page includes a light/dark theme toggle and a print action, but
+            both are optional. Readers who do not need them can ignore them. The
+            page also respects reduced-motion preferences and remains functional
+            when JavaScript is unavailable.
+          </p>
+          <h3>3. Treat mobile as a first-class reading environment</h3>
+          <p>
+            On narrow screens the side navigation is removed, the title scales
+            down, figures can use the full available width, and controls remain
+            reachable. The content never depends on hover states or precise
+            pointer interaction.
+          </p>
+          <h3>4. References are part of the article</h3>
+          <p>
+            References should not feel like an afterthought. They provide
+            provenance and a path for deeper reading. The final section below is
+            intentionally plain and readable rather than hidden behind an
+            interaction.
+          </p>
 
-  function setActiveNav(id) {
-    allNavLinks.forEach(link => {
-      const active = link.getAttribute('href') === '#' + id;
-      link.classList.toggle('active', active);
-      if (active) link.setAttribute('aria-current', 'location');
-      else link.removeAttribute('aria-current');
-    });
-  }
+          <h2 id="conclusion">Conclusion</h2>
+          <p>
+            A strong research-outreach page is ultimately a quiet piece of
+            infrastructure. It helps a reader arrive, orient themselves, read
+            deeply, and leave with enough context to continue. The best visual
+            decisions are therefore the ones that disappear into the reading
+            experience.
+          </p>
+          <p>
+            For Odyssey, that means preserving the project's research-archive
+            character while giving individual records the focused treatment of a
+            serious article page: one clear reading path, useful metadata,
+            predictable navigation and enough structure to make the underlying
+            research easier to discover and reuse.
+          </p>
 
-  if ('IntersectionObserver' in window) {
-    const io = new IntersectionObserver(entries => {
-      const visible = entries.filter(entry => entry.isIntersecting)
-        .sort((a,b) => b.intersectionRatio - a.intersectionRatio)[0];
-      if (visible) setActiveNav(visible.target.id);
-    }, { rootMargin: '-22% 0px -60% 0px', threshold: [0, .1, .5] });
-    sections.forEach(section => io.observe(section));
-  } else {
-    setActiveNav('context');
-  }
+          <section
+            class="references"
+            id="references"
+            aria-labelledby="references-title"
+          >
+            <h2 id="references-title">Related Articles</h2>
+            <ol class="citation">
+              <li>
+                Odyssey. <em>index.html</em>. GitHub repository, accessed
+                September 2026.
+                <a
+                  href="https://github.com/Moderatorboy/Odyssey/blob/main/index.html"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Source page</a
+                >.
+              </li>
+              <li>
+                Springer Nature.
+                <em
+                  >Multiple Ecosystem Effects of Extreme Weather Events in the
+                  Arctic</em
+                >. <em>Ecosystems</em>. DOI: 10.1007/s10021-020-00507-6.
+                <a
+                  href="https://link.springer.com/article/10.1007/s10021-020-00507-6"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Article page</a
+                >.
+              </li>
+              <li>
+                Galer, N.
+                <em
+                  >A Quick Intro Guide to Asynchronous Programming in Python
+                  (using asyncio)</em
+                >. Wix Engineering, Medium, 2022.
+                <a
+                  href="https://medium.com/wix-engineering/a-quick-intro-guide-to-asynchronous-programming-in-python-using-asyncio-18e42e652272"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Article page</a
+                >.
+              </li>
+            </ol>
+          </section>
+        </div>
+      </article>
+    </main>
 
-  function showStatus(message) {
-    status.textContent = message;
-    window.clearTimeout(showStatus.timer);
-    showStatus.timer = window.setTimeout(() => { status.textContent = ''; }, 1800);
-  }
-  async function copyText(text) {
-    if (!navigator.clipboard) throw new Error('clipboard unavailable');
-    await navigator.clipboard.writeText(text);
-  }
+    <footer class="site frame">
+      Maintained by
+      <a href="https://odyssey-sih.vercel.app/" style="text-decoration: none"
+        >Odyssey</a
+      >
+      for public and institutional use.
+    </footer>
 
-  document.getElementById('copyLink').addEventListener('click', async () => {
-    try { await copyText(location.href); showStatus('Page link copied.'); }
-    catch (_) { showStatus('Copy is unavailable in this browser.'); }
-  });
-  document.getElementById('copyCitation').addEventListener('click', async () => {
-    const citation = 'Odyssey Research Archive. “Scattered research, held together as one living archive.” Outreach edition, 2026. ' + location.href;
-    try { await copyText(citation); showStatus('Citation copied.'); }
-    catch (_) { showStatus('Copy is unavailable in this browser.'); }
-  });
-  document.getElementById('topBtn').addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
-  });
-})();
-</script>
-</body>
+    <script>
+      (() => {
+        const body = document.body;
+        const themeBtn = document.getElementById("themeBtn");
+        const progress = document.getElementById("progressBar");
+        const themeMeta = document.getElementById("theme-color");
+        const article = document.getElementById("article");
+        // Same key and convention as index.html: default is dark; ".light" is the
+        // opt-in override, so the theme choice carries across both pages.
+        const storageKey = "odyssey-theme";
+
+        function setTheme(theme, persist = true) {
+          body.classList.toggle("light", theme === "light");
+          themeBtn.textContent = theme === "light" ? "☾" : "☼";
+          themeBtn.setAttribute(
+            "aria-label",
+            theme === "light" ? "Switch to dark mode" : "Switch to light mode",
+          );
+          themeMeta.setAttribute(
+            "content",
+            theme === "light" ? "#edf5f4" : "#070b0d",
+          );
+          if (persist) localStorage.setItem(storageKey, theme);
+        }
+
+        let saved = null;
+        try {
+          saved = localStorage.getItem(storageKey);
+        } catch (_) {}
+        setTheme(saved === "light" ? "light" : "dark", false);
+
+        themeBtn.addEventListener("click", () =>
+          setTheme(body.classList.contains("light") ? "dark" : "light"),
+        );
+
+        document
+          .getElementById("printBtn")
+          .addEventListener("click", () => window.print());
+
+        function updateProgress() {
+          const rect = article.getBoundingClientRect();
+          const total = Math.max(1, article.offsetHeight - window.innerHeight);
+          const current = Math.min(total, Math.max(0, -rect.top));
+          progress.style.width = ((current / total) * 100).toFixed(2) + "%";
+        }
+        window.addEventListener("scroll", updateProgress, { passive: true });
+        window.addEventListener("resize", updateProgress);
+        updateProgress();
+
+        const allNavLinks = [...document.querySelectorAll(".toc a")];
+        const sections = [
+          "context",
+          "problem",
+          "approach",
+          "discoverability",
+          "reuse",
+          "principles",
+          "conclusion",
+          "references",
+        ]
+          .map((id) => document.getElementById(id))
+          .filter(Boolean);
+
+        function setActiveNav(id) {
+          allNavLinks.forEach((link) => {
+            const active = link.getAttribute("href") === "#" + id;
+            link.classList.toggle("active", active);
+            if (active) link.setAttribute("aria-current", "location");
+            else link.removeAttribute("aria-current");
+          });
+        }
+
+        if ("IntersectionObserver" in window) {
+          const io = new IntersectionObserver(
+            (entries) => {
+              const visible = entries
+                .filter((entry) => entry.isIntersecting)
+                .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+              if (visible) setActiveNav(visible.target.id);
+            },
+            { rootMargin: "-22% 0px -60% 0px", threshold: [0, 0.1, 0.5] },
+          );
+          sections.forEach((section) => io.observe(section));
+        } else {
+          setActiveNav("context");
+        }
+      })();
+    </script>
+  </body>
 </html>
